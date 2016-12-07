@@ -1,11 +1,22 @@
 # Funceme - Seleção SIGA
-Processo de seleção de candidatos para a vaga de programador C++
+A Fundação Cearense de Meteorologia e Recursos Hidricos do Ceará (FUNCEME) realiza desenvolvimento de software em diversos segmentos (web, desktop e mobile) a partir de informações de imagens de satélites, dados de estações meteorológicas e hidrológicas, dados de monitoramento de nível de reservatórios e poços. Encontra-se na Funceme em desenvolvimento o SIGA - Sistema de Informações para Gerenciamento da Alocação e de Água.
+
+SELEÇÃO DE PROFISSIONAIS DE NÍVEL SUPERIOR 1 VAGA NA ÁREA DE DESENVOLVIMENTO em C++
+
+Processo de seleção de candidatos para a vaga de Analista de Sistemas II
+
+1 vaga para analista de sistemas II;
+
+Salário: Conforme convencão coletiva SEACEC
+
+Carga horária: 40 horas semanais
 
 Requisitos Básicos
 ==================
 - Linguagem C++ 11
 - Inglês (leitura)
 - Git
+- Graduação Completa em Computação ou áreas afins;
 
 Requisitos Desejáveis
 =====================
