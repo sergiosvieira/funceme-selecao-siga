@@ -1,7 +1,7 @@
-# Funceme - Seleção SIGA
+# Funceme - Seleção SIGA - Enviar currículo até 16/12/2016
 A Fundação Cearense de Meteorologia e Recursos Hidricos do Ceará (FUNCEME) realiza desenvolvimento de software em diversos segmentos (web, desktop e mobile) a partir de informações de imagens de satélites, dados de estações meteorológicas e hidrológicas, dados de monitoramento de nível de reservatórios e poços. Encontra-se na Funceme em desenvolvimento o SIGA - Sistema de Informações para Gerenciamento da Alocação e de Água.
 
-SELEÇÃO DE PROFISSIONAIS DE NÍVEL SUPERIOR 1 VAGA NA ÁREA DE DESENVOLVIMENTO em C++
+SELEÇÃO DE PROFISSIONAIS DE NÍVEL SUPERIOR 1 VAGA NA ÁREA DE DESENVOLVIMENTO em C++ Windows
 
 Processo de seleção de candidatos para a vaga de Analista de Sistemas II
 
