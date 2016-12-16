@@ -1,0 +1,166 @@
+                ._,.
+            ."..-..pf
+            -L   ..#'
+          .+_L  ."]#
+          ,'j' .+.j`                 -'.__..,.,p.
+         _~ #..<..0.                 .J-.``..._f.
+        .7..#_.. _f.                .....-..,`4'
+        ;` ,#j.  T'      ..         ..J....,'.j`
+       .` .."^.,-0.,,,,yMMMMM,.    ,-.J...+`.j@
+      .'.`...' .yMMMMM0M@^=`""g.. .'..J..".'.jH
+      j' .'1`  q'^)@@#"^".`"='BNg_...,]_)'...0-
+     .T ...I. j"    .'..+,_.'3#MMM0MggCBf....F.
+     j/.+'.{..+       `^~'-^~~""""'"""?'"``'1`
+     .... .y.}                  `.._-:`_...jf
+     g-.  .Lg'                 ..,..'-....,'.
+    .'.   .Y^                  .....',].._f
+    ......-f.                 .-,,.,.-:--&`
+                              .`...'..`_J`
+                              .~......'#'  Ray Brunner
+                              '..,,.,_]`
+                              .L..`..``.
+
+Instruções
+==========
+- Os projetos devem ser feitos no Visual Studio 2015 (preferencialmente) ou no qtcreator.
+- Caso seu código não compile ele não será avaliado.
+- Você será avaliado tanto pela corretude da resposta quanto pelo estilo de programação.
+- Prazo de envio: 21/12/2016 até às 08:00:00
+- Enviar projetos (questão 1 e 3) e resposta da questão 2 para os emails descobertos no primeiro desafio.
+- C++11 não é Java, nem C# :)
+- Não programe em C++11 como se estivesse programando em C.
+
+Resolva da melhor forma possível, considerando padrões, uso da memória, simplicidade, complexidade, melhores 
+práticas e o que há de melhor no C++11 para resolver os problemas abaixo:
+
+1) Implemente uma solução que modele uma Matriz capaz de satisfazer as seguintes restrições:
+	a) Ser capaz de lidar com qualquer tipo de valor (bool, int, double, float, etc).
+	b) Ser capaz de adicionar/excluir linhas e colunas da matriz.
+	c) Economizar uso de memória.
+	d) Ser capaz de incluir/retornar/modificar valores da matriz.
+	e) Ser capaz de somar valores de uma determinada linha ou coluna da matriz.
+	f) Salvar/Carregar matriz de arquivo texto.
+
+2) Descreva da forma mais detalhada possível o que o código abaixo realiza e como ele fez isto.
+
+#include <algorithm>
+#include <cstdlib>
+#include <fstream>
+#include <initializer_list>
+#include <iostream>
+#include <locale>
+#include <string>
+#include <vector>
+#include <iso646.h>
+
+template<class C>
+struct text : std::basic_string<C>
+{
+    text() : text{""} {}
+    text(char const* s) : std::basic_string<C>(s) {}
+    text(text const&) = default;
+    text& operator=(text const&) = default;
+};
+
+template<class Ch>
+auto read(std::basic_istream<Ch>& in) -> std::vector<text<Ch>>
+{
+    std::vector<text<Ch>> result;
+    text<Ch> line;
+    while (std::getline(in, line))
+    {
+        result.push_back(line);
+    }
+    return result;
+}
+
+int main(int argc, char* argv[])
+{
+    try
+    {
+        std::cin.exceptions(std::ios_base::badbit);
+        std::vector<text<char>> text; ///< Store the lines of text here
+        if (argc < 2)
+        {
+            std::exit(EXIT_FAILURE);
+        }
+        else
+        {
+            std::ifstream in(argv[1]);
+            if (not in)
+            {
+                std::perror(argv[1]);
+                return EXIT_FAILURE;
+            }
+            text = read(in);
+        }
+        std::locale const& loc{ std::locale(argc >= 3 ? argv[2] : "") };
+        std::collate<char> const& collate( std::use_facet<std::collate<char>>(loc) );
+        std::sort(text.begin(), text.end(), [&collate](std::string const& a, std::string const& b)
+        {
+            return collate.compare(a.data(), a.data()+a.size(),
+            b.data(), b.data()+b.size()) < 0;
+        });
+        for (auto const& line : text)
+        {
+            std::cout << line << '\n';
+        }
+    }
+    catch (std::exception& ex)
+    {
+        std::cerr << "Caught exception: " << ex.what() << '\n';
+        std::cerr << "Terminating program.\n";
+        std::exit(EXIT_FAILURE);
+    }
+    catch (...)
+    {
+        std::cerr << "Caught unknown exception type.\nTerminating program.\n";
+        std::exit(EXIT_FAILURE);
+    }
+    return 0;
+}
+
+3) Implemente uma estrutura de dados do tipo árvore com as seguintes características:
+	a) Possua 3 níveis.
+	b) O primeiro nível deve armazenar um ano qualquer.
+	c) O segundo nível deve armazenar os meses daquele ano.
+	d) O terceiro nível deve armazenar os dias de um determinado mês.
+
+	Visualização de um exemplo da árvore
+					            1978
+		jan						    fev			         ...	 dez
+	1 2 3 4 5 ... 31		1 2 3 4 5 ...28		     1 2 3 ... 31
+
+	e) Cada nó pai deve possuir o somatório dos valores de cada coluna identificada contida em seus filhos.
+     Isto ficará mais claro no exemplo mais abaixo.
+	f) Cada nível deve possuir uma estrutura capaz armazenar os valores associados a cada coluna identificada.
+
+	A árvore deve ler um arquivo de entrada do tipo
+	            110	 111	112 <- Identificador de valores de cada coluna de uma determinada data
+	01/01/1978	1.0	 2.0	3.0
+	02/01/1978	4.0	 5.0	6.0
+
+	01/02/1978	7.0	 8.0	9.0
+	02/02/1978	10.0 11.0	12.0
+
+	01/03/1978	13.0 14.0	15.0
+	02/03/1978	16.0 17.0	18.0
+
+	E preencher a árvore para que ela fique da seguinte forma
+
+ANO                                                   1978
+                                                      [110] = 51.0 
+                                                      [111] = 57.0 
+                                                      [112] = 63.0
+MES       janeiro				          fevereiro				            março							          abril         (...) 		dez
+          [110] = 5.0 	          [110] = 17.0		            [110] = 29.0			          
+          [111] = 7.0 	          [111] = 19.0		            [111] = 31.0			
+          [112] = 9.0             [112] = 21.0                [112] = 33.0      
+DIA   1			        2		        	1			       2		          1				      2	
+      [110] = 1.0 	[110] = 4.0		[110] = 7.0	 [110] = 10.0	  [110] = 13.0	[110] = 16.0
+      [111] = 2.0 	[111] = 5.0		[111] = 8.0	 [111] = 11.0	  [111] = 14.0	[111] = 17.0
+      [112] = 3.0 	[112] = 6.0		[112] = 9.0	 [112] = 12.0	  [112] = 15.0	[112] = 18.0
+
+	g) Ser capaz de preencher/modificar valores a partir de uma data e um índice
+	f) Ser capaz de retornar os valores associados a cada (ano, índice)
+	g) Ler/Salvar os dados em arquivo texto.
