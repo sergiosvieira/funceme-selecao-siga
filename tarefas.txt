@@ -25,7 +25,7 @@ Instruções
 - Os projetos devem ser feitos no Visual Studio 2015 (preferencialmente) ou no qtcreator.
 - Caso seu código não compile ele não será avaliado.
 - Você será avaliado tanto pela corretude da resposta quanto pelo estilo de programação.
-- Prazo de envio: 21/12/2016 até às 08:00:00
+- Prazo de envio: 21/12/2016 até às 08:00:00 da manhã.
 - Enviar projetos (questão 1 e 3) e resposta da questão 2 para os emails descobertos no primeiro desafio.
 - C++11 não é Java, nem C# :)
 - Não programe em C++11 como se estivesse programando em C.
