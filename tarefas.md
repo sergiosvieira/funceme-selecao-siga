@@ -156,6 +156,6 @@ int main(int argc, char* argv[])
 
 ### E preencher a árvore para que ela fique da seguinte forma
 
-![alt tag](https://ibin.co/35ZbfDGP7a23.png)
+![alt tag](https://ibin.co/35Zx0hmmJywC.png)
 
 
