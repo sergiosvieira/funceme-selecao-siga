@@ -32,7 +32,7 @@ Instruções
 
 ### Resolva da melhor forma possível, considerando padrões, uso da memória, simplicidade, complexidade, melhores práticas e o que há de melhor no C++11 para resolver os problemas abaixo:
 
-1. Implemente uma solução que modele uma Matriz capaz de satisfazer as seguintes restrições:
+* 1) Implemente uma solução que modele uma Matriz capaz de satisfazer as seguintes restrições:
 	* Ser capaz de lidar com qualquer tipo de valor (bool, int, double, float, etc).
 	* Ser capaz de adicionar/excluir linhas e colunas da matriz.
 	* Economizar uso de memória.
@@ -40,7 +40,7 @@ Instruções
 	* Ser capaz de somar valores de uma determinada linha ou coluna da matriz.
 	* Salvar/Carregar matriz de arquivo texto.
 
-2. Descreva da forma mais detalhada possível o que o código abaixo realiza e como ele fez isto.
+* 2) Descreva da forma mais detalhada possível o que o código abaixo realiza e como ele fez isto.
 
 ```C++
 #include <algorithm>
@@ -121,7 +121,7 @@ int main(int argc, char* argv[])
 }
 ```
 
-3. Implemente uma estrutura de dados do tipo árvore com as seguintes características:
+* 3) Implemente uma estrutura de dados do tipo árvore com as seguintes características:
 	* Possua 3 níveis.
 	* O primeiro nível deve armazenar um ano qualquer.
 	* O segundo nível deve armazenar os meses daquele ano.
@@ -131,7 +131,8 @@ int main(int argc, char* argv[])
 	* Ser capaz de preencher/modificar valores a partir de uma data e um índice
 	* Ser capaz de retornar os valores associados a cada (ano, índice)
 	* Ler/Salvar os dados em arquivo texto.	
-	Visualização de um exemplo da árvore
+	
+### Visualização de um exemplo da árvore
 
 ```
 					    1978
@@ -139,9 +140,7 @@ int main(int argc, char* argv[])
 1 2 3 4 5 ... 31		1 2 3 4 5 ...28		     1 2 3 ... 31
 ```
 
-
-
-	A árvore deve ler um arquivo de entrada do tipo
+### A árvore deve ler um arquivo de entrada do tipo
 
 ```
 		110	 111	112 <- Identificador de valores de cada coluna de uma determinada data
@@ -155,7 +154,7 @@ int main(int argc, char* argv[])
 02/03/1978	16.0     17.0	18.0
 ```
 
-	E preencher a árvore para que ela fique da seguinte forma
+### E preencher a árvore para que ela fique da seguinte forma
 
 ![alt tag](https://ibin.co/35ZbfDGP7a23.png)
 
