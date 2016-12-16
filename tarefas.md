@@ -30,19 +30,19 @@ Instruções
 - C++11 não é Java, nem C# :)
 - Não programe em C++11 como se estivesse programando em C.
 
-Resolva da melhor forma possível, considerando padrões, uso da memória, simplicidade, complexidade, melhores 
-práticas e o que há de melhor no C++11 para resolver os problemas abaixo:
+### Resolva da melhor forma possível, considerando padrões, uso da memória, simplicidade, complexidade, melhores práticas e o que há de melhor no C++11 para resolver os problemas abaixo:
 
-1) Implemente uma solução que modele uma Matriz capaz de satisfazer as seguintes restrições:
-	a) Ser capaz de lidar com qualquer tipo de valor (bool, int, double, float, etc).
-	b) Ser capaz de adicionar/excluir linhas e colunas da matriz.
-	c) Economizar uso de memória.
-	d) Ser capaz de incluir/retornar/modificar valores da matriz.
-	e) Ser capaz de somar valores de uma determinada linha ou coluna da matriz.
-	f) Salvar/Carregar matriz de arquivo texto.
+1. Implemente uma solução que modele uma Matriz capaz de satisfazer as seguintes restrições:
+	* Ser capaz de lidar com qualquer tipo de valor (bool, int, double, float, etc).
+	* Ser capaz de adicionar/excluir linhas e colunas da matriz.
+	* Economizar uso de memória.
+	* Ser capaz de incluir/retornar/modificar valores da matriz.
+	* Ser capaz de somar valores de uma determinada linha ou coluna da matriz.
+	* Salvar/Carregar matriz de arquivo texto.
 
-2) Descreva da forma mais detalhada possível o que o código abaixo realiza e como ele fez isto.
+2. Descreva da forma mais detalhada possível o que o código abaixo realiza e como ele fez isto.
 
+```C++
 #include <algorithm>
 #include <cstdlib>
 #include <fstream>
@@ -119,48 +119,44 @@ int main(int argc, char* argv[])
     }
     return 0;
 }
+```
 
-3) Implemente uma estrutura de dados do tipo árvore com as seguintes características:
-	a) Possua 3 níveis.
-	b) O primeiro nível deve armazenar um ano qualquer.
-	c) O segundo nível deve armazenar os meses daquele ano.
-	d) O terceiro nível deve armazenar os dias de um determinado mês.
-
+3. Implemente uma estrutura de dados do tipo árvore com as seguintes características:
+	* Possua 3 níveis.
+	* O primeiro nível deve armazenar um ano qualquer.
+	* O segundo nível deve armazenar os meses daquele ano.
+	* O terceiro nível deve armazenar os dias de um determinado mês.
+	* Cada nó pai deve possuir o somatório dos valores de cada coluna identificada contida em seus filhos. Isto ficará mais claro no exemplo mais abaixo.
+	* Cada nível deve possuir uma estrutura capaz armazenar os valores associados a cada coluna identificada.
+	* Ser capaz de preencher/modificar valores a partir de uma data e um índice
+	* Ser capaz de retornar os valores associados a cada (ano, índice)
+	* Ler/Salvar os dados em arquivo texto.	
 	Visualização de um exemplo da árvore
-					            1978
-		jan						    fev			         ...	 dez
-	1 2 3 4 5 ... 31		1 2 3 4 5 ...28		     1 2 3 ... 31
 
-	e) Cada nó pai deve possuir o somatório dos valores de cada coluna identificada contida em seus filhos.
-     Isto ficará mais claro no exemplo mais abaixo.
-	f) Cada nível deve possuir uma estrutura capaz armazenar os valores associados a cada coluna identificada.
+```
+					    1978
+	jan						    fev			         ...	 dez
+1 2 3 4 5 ... 31		1 2 3 4 5 ...28		     1 2 3 ... 31
+```
+
+
 
 	A árvore deve ler um arquivo de entrada do tipo
-	                110	 111	112 <- Identificador de valores de cada coluna de uma determinada data
-	01/01/1978	1.0	 2.0	3.0
-	02/01/1978	4.0	 5.0	6.0
 
-	01/02/1978	7.0	 8.0	9.0
-	02/02/1978	10.0 11.0	12.0
+```
+		110	 111	112 <- Identificador de valores de cada coluna de uma determinada data
+01/01/1978	1.0	 2.0	3.0
+02/01/1978	4.0	 5.0	6.0
 
-	01/03/1978	13.0 14.0	15.0
-	02/03/1978	16.0 17.0	18.0
+01/02/1978	7.0	 8.0	9.0
+02/02/1978	10.0     11.0	12.0
+
+01/03/1978	13.0     14.0	15.0
+02/03/1978	16.0     17.0	18.0
+```
 
 	E preencher a árvore para que ela fique da seguinte forma
 
-ANO                                                   1978
-                                                      [110] = 51.0 
-                                                      [111] = 57.0 
-                                                      [112] = 63.0
-MES       janeiro				          fevereiro				            março							          abril         (...) 		dez
-          [110] = 5.0 	          [110] = 17.0		            [110] = 29.0			          
-          [111] = 7.0 	          [111] = 19.0		            [111] = 31.0			
-          [112] = 9.0             [112] = 21.0                [112] = 33.0      
-DIA   1			        2		        	1			       2		          1				      2	
-      [110] = 1.0 	[110] = 4.0		[110] = 7.0	 [110] = 10.0	  [110] = 13.0	[110] = 16.0
-      [111] = 2.0 	[111] = 5.0		[111] = 8.0	 [111] = 11.0	  [111] = 14.0	[111] = 17.0
-      [112] = 3.0 	[112] = 6.0		[112] = 9.0	 [112] = 12.0	  [112] = 15.0	[112] = 18.0
+![alt tag](https://ibin.co/35ZbfDGP7a23.png)
 
-	g) Ser capaz de preencher/modificar valores a partir de uma data e um índice
-	f) Ser capaz de retornar os valores associados a cada (ano, índice)
-	g) Ler/Salvar os dados em arquivo texto.
+
