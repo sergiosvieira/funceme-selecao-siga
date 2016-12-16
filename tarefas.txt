@@ -136,7 +136,7 @@ int main(int argc, char* argv[])
 	f) Cada nível deve possuir uma estrutura capaz armazenar os valores associados a cada coluna identificada.
 
 	A árvore deve ler um arquivo de entrada do tipo
-	            110	 111	112 <- Identificador de valores de cada coluna de uma determinada data
+	                110	 111	112 <- Identificador de valores de cada coluna de uma determinada data
 	01/01/1978	1.0	 2.0	3.0
 	02/01/1978	4.0	 5.0	6.0
 
