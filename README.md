@@ -1,4 +1,4 @@
-# Funceme - Seleção SIGA - Enviar currículo até 16/12/2016
+# Funceme - Seleção SIGA - Enviar currículo até 05/05/2017
 A Fundação Cearense de Meteorologia e Recursos Hidricos do Ceará (FUNCEME) realiza desenvolvimento de software em diversos segmentos (web, desktop e mobile) a partir de informações de imagens de satélites, dados de estações meteorológicas e hidrológicas, dados de monitoramento de nível de reservatórios e poços. Encontra-se na Funceme em desenvolvimento o SIGA - Sistema de Informações para Gerenciamento da Alocação e de Água.
 
 SELEÇÃO DE PROFISSIONAIS DE NÍVEL SUPERIOR 1 VAGA NA ÁREA DE DESENVOLVIMENTO em C++ Windows
@@ -28,7 +28,7 @@ Requisitos Desejáveis
 
 Instruções
 ==========
-Inicialmente, você vai precisar "forkar" este respositório e criar um pequeno programa que deve utilizar a biblioteca provadll.dll. Nesta biblioteca há uma classe com um método chamado getEmail() que irá retornar uma string contendo os emails para onde enviar seu currículo assim como o título da mensagem que você deve utilizar. Depois de compilar e testar sua aplicação, você deve enviar seu currículo e o código fonte para os emails descobertos. Atenção, não analisaremos currículos de candidatos que NÂO seguirem todas as instruções de envio citadas anteriormente.
+Inicialmente, você vai precisar "forkar" este respositório e criar um pequeno programa que deve utilizar a biblioteca provadll.dll. Nesta biblioteca há uma classe com um método chamado getEmail() que irá retornar uma string contendo os emails para onde enviar seu currículo assim como o título da mensagem que você deve utilizar. Depois de compilar e testar sua aplicação, você deve enviar seu currículo e o código fonte para os emails descobertos. Atenção, não analisaremos currículos de candidatos que NÃO seguirem todas as instruções de envio citadas anteriormente.
 
 Informações sobre a biblioteca windows
 ======================================
