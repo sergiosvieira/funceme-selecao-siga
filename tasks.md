@@ -168,6 +168,9 @@ Crie um método para contar em quantas passos de tempo o fornecedor será capaz 
 
 Exemplo de Entrada
 ==================
+
+Atenção - O grafo não precisa necessariamente ser carregado de um arquivo texto. Você pode criar os vértices e arestas dentro do seu programa.
+
 ```
 [F]-->--[C1]
 F(1) = 10 - Quantidade disponível no fornecedor F no tempo um
