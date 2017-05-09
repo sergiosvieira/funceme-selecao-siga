@@ -81,6 +81,8 @@ class PriorityUtils
 
 #endif /** __PRIORITY_UTILS__ **/
 ```
+![alt tag](https://ibin.co/3LrZEp6nILk6)
+
 Exemplo de Entrada
 ==================
 ```
